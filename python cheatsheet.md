@@ -2,6 +2,6 @@ Python cheatsheet
 
 ### String
 
-concatinate string like a pro
+concatinate strings like a pro
 
 	foo = ''.join([foo, 'ooo'])
