@@ -25,15 +25,16 @@ lists
 
 return vars greater then 4
 
-a = [3, 4, 5]
-b = [i for i in a if i > 4]
-b = filter(lambda x: x > 4, a)
+	a = [3, 4, 5]
+		b = [i for i in a if i > 4]
+	or 
+		b = filter(lambda x: x > 4, a)
 
 enumerate a list
-a = [3, 4, 5]
-a = [i + 3 for i in a]
-# Or:
-a = map(lambda i: i + 3, a)
+	a = [3, 4, 5]
+	a = [i + 3 for i in a]
+Or:
+	a = map(lambda i: i + 3, a)
 
 
 ### functions
