@@ -1,20 +1,20 @@
-Python cheatsheet
+##Python cheatsheet
 
-### String
+### variable type
+
+#### strings
 
 concatinate strings like a pro
 
 	foobar = ''.join(['foo', 'bar'])
 
 
-### variable type
-
-dictionary:
+#### dictionary
 
 	test = {'name':'John','job':'teacher'}
 	print test['job'] # prints teacher
 
-lists
+#### lists
 
 	zoo_animals = ["pangolin", "cassowary", "sloth"];
 	zoo_animals.append("ape")
@@ -37,6 +37,9 @@ enumerate a list
 Or:
 	a = map(lambda i: i + 3, a)
 
+	for index, item in enumerate(list):
+    	print index, item
+
 
 ### functions
 
@@ -44,5 +47,31 @@ Or:
 
 def make_complex(x, y):
     return {'x': x, 'y': y} # return a list instead of just a var
+
+
+
+for schleife 5x durchlaufen
+	
+	for i in range(5):
+
+Userinpt
+	
+	x = raw_input("prompt")
+
+print without a newline
+
+	print something,	
+
+### files
+open files the right way
+
+	with open('file.txt') as f:
+    	for line in f:
+        	print line
+
+    with open("text.txt", "w") as textfile:
+		textfile.write("Success!")
+
+
 
 
