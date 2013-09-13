@@ -183,6 +183,21 @@ to apply iptables on startup: insert this into /etc/network/interfaces
 
 	pre-up iptables-restore < /etc/iptables.rules
 
+
+script zum iptables sichern
+
+#!/bin/sh
+sudo sh -c "iptables-save > /etc/iptables.rules"
+STATE=0
+if [ $? -eq 0 ] ;then
+        echo "IPTABLES saved"
+        STATE=1
+else
+        echo "something went wrong"
+fi
+exit $STATE
+
+
 ###ssh key 
 
 erzeugen
@@ -530,4 +545,14 @@ für statische IP
   	dns-search domain.local
   	dns-nameservers 8.8.8.8 8.8.8.8
 
+### videodownload script
 
+#!/bin/zsh
+STATE=0
+target=/var/www/sandmann
+newfilename=sandmann-`date +%d-%m-%Y`.wmv
+logger starte mplayer capture
+mplayer -dumpstream -dumpfile $target/$newfilename  mmsh://85.239.122.162/mk3w-3faw-3rqf-enc0-kika\?MSWMExt\=.asf &
+sleep 722
+killall mplayer
+exit $STATE

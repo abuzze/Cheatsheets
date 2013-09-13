@@ -23,6 +23,15 @@ concatinate strings like a pro
 	zoo_animals.index("cobra") # returns 1
 
 
+look for items in my_list and put them into my_other_list if they are not already there
+
+	my_list=[2,2,3,40]
+	my_other_list =[]
+    for i in my_list:
+        if i not in my_other_list:
+            no_dups.append(i)
+             
+
 return vars greater then 4
 
 	a = [3, 4, 5]
