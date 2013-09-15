@@ -13,6 +13,12 @@ concatinate strings like a pro
 
 	test = {'name':'John','job':'teacher'}
 	print test['job'] # prints teacher
+	print test.key() #prints ['name','job']
+	print test.values() #prints ['John','teacher']
+	print test.items() #prints [('name','teacher'),('nextkey','nextvalue')]
+
+	for key in test:
+    print key,test[key] #prints name John \n job teacher
 
 #### lists
 
@@ -22,15 +28,27 @@ concatinate strings like a pro
 	zoo_animals.insert(1,"cobra") #change cassowary to cobra
 	zoo_animals.index("cobra") # returns 1
 
+##### list comprehension
+	
+	evens_to_50 = [i for i in range(51) if i % 2 == 0]
+	print evens_to_50 #prints [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
 
-look for items in my_list and put them into my_other_list if they are not already there
+	new_list = [x for x in range(1,6)] #prints [1, 2, 3, 4, 5]
+	new_list = [x*2 for x in range(1,6)] #prints [2, 4, 6, 8, 10]
+
+
+	look for items in my_list and put them into my_other_list if they are not already there
 
 	my_list=[2,2,3,40]
 	my_other_list =[]
     for i in my_list:
         if i not in my_other_list:
             no_dups.append(i)
-             
+
+#### list slicing
+	l = [i ** 2 for i in range(1, 11)] # Should be [1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+	print l[2:9:2] #[start:end:stride] stride describes the space between items in the sliced list.  # [9, 25, 49, 81]
+    print l[::5]   # [1,25,100] # every 5th   
 
 return vars greater then 4
 
