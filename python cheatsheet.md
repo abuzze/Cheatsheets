@@ -99,6 +99,31 @@ open files the right way
     with open("text.txt", "w") as textfile:
 		textfile.write("Success!")
 
+### binary
+
+print 0b111   #7
+print 0b1 + 0b11 #4
+print int("11001001",2) #201 because int(string,base)
+print bin(2) #0b10
+print ~2 # prints -3 because 1 is added and then the numbers turns negative
+
+check if bit is set:
+
+mask = 0b100 #check if the 3rd bit is on
+a=0b110
+desired = a & mask #if desired is greater than 0 == true 
+
+turning bits on:
+
+a = 0b110 # 6
+mask = 0b1 # 1
+desired =  a | mask # 0b111, or 7
+
+bitflipping:
+
+a = 0b110 # 6
+mask = 0b111 # 7 (always fill all needed bits with 1)
+desired =  a ^ mask # 0b1
 
 
 
