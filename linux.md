@@ -9,6 +9,11 @@ welchen dateien werden von welchen Prozess genutzt
 
 	lsof -p 16528
 
+
+Wird ein unlinked file von einem Prozess offen gehalten?
+
+	lsof -a +L1 /dev/file
+
 oder per User
 
 	lsof -u www-data
@@ -21,6 +26,7 @@ oder per User
 ### Dateien suchen
 	
 	find /var/ -name '*.jpg'
+
 
 ### Paketverwaltung
 
@@ -107,6 +113,7 @@ routen anzeigen
 	cat /etc/*version
 	cat /etc/issue
 	cat /proc/version
+	getconf LONG_BIT #64 oder 32 bit
 
 ###cert request
 	openssl req -nodes -newkey rsa:2048 -keyout domainname.key -out domainname.csr
@@ -122,6 +129,10 @@ unter https://caserver/certsrv in eine cer umwandeln
 Ordnergröße aller Unterordner summieren und anzeigen
 
 	du -cksh * |sort -g
+
+Alle großen Dateien über 20MB finden und anzeigen
+
+	find / -type f -size +20000k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
 
 ###symlink
 	ln -s quelle ziel
@@ -198,7 +209,7 @@ fi
 exit $STATE
 
 
-###ssh key 
+### key 
 
 erzeugen
 	
@@ -491,6 +502,11 @@ If there are no errors, you should test how it works after a reboot. Your remote
 	host:/share   /mountpoint   nfs    rsize=8192,wsize=8192,timeo=14,intr
 
 ## Berechtigungen
+
+4 - read
+2 - write
+1 - execute
+
 
 /home 755
 ./ssh 700
