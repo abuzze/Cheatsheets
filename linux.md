@@ -572,3 +572,25 @@ mplayer -dumpstream -dumpfile $target/$newfilename  mmsh://85.239.122.162/mk3w-3
 sleep 722
 killall mplayer
 exit $STATE
+
+### SQLITE3 Commands
+
+Open a database
+	
+	sqlite3 tablename
+
+Show Tables in this database
+	
+	.tables
+
+Show a specific tableschema
+
+	.schema tablename
+
+Show the content of a table
+
+	SELECT * FROM table;
+
+Shows the help
+
+	.help
